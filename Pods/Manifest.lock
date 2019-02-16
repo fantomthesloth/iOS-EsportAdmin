@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.8.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SideMenu (5.0.3)
+  - SnapKit (4.2.0)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SDWebImage (~> 4.0)
+  - SideMenu
+  - SnapKit (~> 4.0)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SDWebImage
+    - SideMenu
+    - SnapKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 0c65999ee30188181db8fd7ff72be81f3482b323
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,24 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "0Jt-GR-gQV"; */
+"0Jt-GR-gQV.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ITi-cm-n2b"; */
+"ITi-cm-n2b.title" = "Item";
+
+/* Class = "UILabel"; text = "TItle"; ObjectID = "IjU-aB-aGp"; */
+"IjU-aB-aGp.text" = "TItle";
+
+/* Class = "UILabel"; text = "asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd "; ObjectID = "ahI-kh-FDU"; */
+"ahI-kh-FDU.text" = "asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd ";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "nIH-88-Yd0"; */
+"nIH-88-Yd0.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Hírek"; ObjectID = "t4B-7m-u2a"; */
+"t4B-7m-u2a.title" = "Hírek";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vn1-lw-ufB"; */
+"vn1-lw-ufB.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Profil"; ObjectID = "xR5-N3-rnh"; */
+"xR5-N3-rnh.title" = "Profil";
