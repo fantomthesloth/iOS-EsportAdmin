@@ -34,7 +34,7 @@
 		A63E70E721C3B1D500BA797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A63E70E921C3B1D700BA797C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A63E70EC21C3B1D700BA797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A63E70EE21C3B1D700BA797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EsportAdmin/Info.plist; sourceTree = SOURCE_ROOT; };
+		A63E70EE21C3B1D700BA797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EsportAdmin/Storyboards/Info.plist; sourceTree = SOURCE_ROOT; };
 		A63E70F421C3B83C00BA797C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A63E70F621C3B85400BA797C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
@@ -63,6 +63,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101FB5DB22180F6700C6B298 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A63E710421C7E8F300BA797C /* Constants.swift */,
+				A63E710021C7A90B00BA797C /* Alert.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		101FB5DC22180F7000C6B298 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A63E70FA21C3BD1400BA797C /* NewsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		101FB5DD22180F7700C6B298 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		101FB5DE22180F7C00C6B298 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */,
+				A63E70F421C3B83C00BA797C /* NewsViewController.swift */,
+				A63E70F621C3B85400BA797C /* WebViewController.swift */,
+				A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */,
+				A63E710221C7E3DD00BA797C /* SignupViewController.swift */,
+				A63E710621C7EE0200BA797C /* StartViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		101FB5DF22180FA200C6B298 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A63E70EE21C3B1D700BA797C /* Info.plist */,
+				A63E710821C7F25D00BA797C /* Login.storyboard */,
+				A63E70E621C3B1D500BA797C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		A63E70D621C3B1D400BA797C = {
 			isa = PBXGroup;
 			children = (
@@ -84,22 +132,14 @@
 		A63E70E121C3B1D500BA797C /* EsportAdmin */ = {
 			isa = PBXGroup;
 			children = (
-				A63E710421C7E8F300BA797C /* Constants.swift */,
-				A63E710021C7A90B00BA797C /* Alert.swift */,
-				A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */,
-				A63E70FA21C3BD1400BA797C /* NewsModel.swift */,
-				A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */,
-				A63E70F421C3B83C00BA797C /* NewsViewController.swift */,
-				A63E70F621C3B85400BA797C /* WebViewController.swift */,
-				A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */,
-				A63E710221C7E3DD00BA797C /* SignupViewController.swift */,
-				A63E710621C7EE0200BA797C /* StartViewController.swift */,
-				A63E70E221C3B1D500BA797C /* AppDelegate.swift */,
-				A63E710821C7F25D00BA797C /* Login.storyboard */,
-				A63E70E621C3B1D500BA797C /* Main.storyboard */,
+				101FB5DB22180F6700C6B298 /* Utilities */,
+				101FB5DC22180F7000C6B298 /* Models */,
+				101FB5DD22180F7700C6B298 /* Cells */,
+				101FB5DE22180F7C00C6B298 /* Controllers */,
+				101FB5DF22180FA200C6B298 /* Storyboards */,
 				A63E70E921C3B1D700BA797C /* Assets.xcassets */,
+				A63E70E221C3B1D500BA797C /* AppDelegate.swift */,
 				A63E70EB21C3B1D700BA797C /* LaunchScreen.storyboard */,
-				A63E70EE21C3B1D700BA797C /* Info.plist */,
 			);
 			path = EsportAdmin;
 			sourceTree = "<group>";
