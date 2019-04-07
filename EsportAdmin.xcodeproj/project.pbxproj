@@ -34,7 +34,7 @@
 		A63E70E721C3B1D500BA797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A63E70E921C3B1D700BA797C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A63E70EC21C3B1D700BA797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A63E70EE21C3B1D700BA797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EsportAdmin/Storyboards/Info.plist; sourceTree = SOURCE_ROOT; };
+		A63E70EE21C3B1D700BA797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EsportAdmin/Info.plist; sourceTree = SOURCE_ROOT; };
 		A63E70F421C3B83C00BA797C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A63E70F621C3B85400BA797C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
@@ -104,7 +104,6 @@
 		101FB5DF22180FA200C6B298 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				A63E70EE21C3B1D700BA797C /* Info.plist */,
 				A63E710821C7F25D00BA797C /* Login.storyboard */,
 				A63E70E621C3B1D500BA797C /* Main.storyboard */,
 			);
@@ -138,6 +137,7 @@
 				101FB5DE22180F7C00C6B298 /* Controllers */,
 				101FB5DF22180FA200C6B298 /* Storyboards */,
 				A63E70E921C3B1D700BA797C /* Assets.xcassets */,
+				A63E70EE21C3B1D700BA797C /* Info.plist */,
 				A63E70E221C3B1D500BA797C /* AppDelegate.swift */,
 				A63E70EB21C3B1D700BA797C /* LaunchScreen.storyboard */,
 			);
