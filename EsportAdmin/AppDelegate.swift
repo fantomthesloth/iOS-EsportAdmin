@@ -10,9 +10,27 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    let defaults = UserDefaults.standard
+    
     var window: UIWindow?
-
+    var token: Token? {
+        get {
+            if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.token) {
+                var token = Token()
+                token.token = UserDefaults.standard.string(forKey: Constants.UserDefaultsKeys.token)
+                return token
+            }
+            return Token()
+        }
+        set {
+            if let token = newValue {
+                defaults.set(token.token, forKey: Constants.UserDefaultsKeys.token)
+                RestClient.updateToken(to: token.token ?? "")
+            } else {
+                UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.token)
+            }
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -31,11 +31,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginFcn(_ sender: Any) {
-        if usernameTextField.text == "asd" && passwordTextField.text == "asd" {
-            performSegue(withIdentifier: Constants.Segues.loginToNews, sender: self)
-        } else {
-            showAlert(title: "Hibás bejelentkezés", message: "Rossz felhasználónév vagy jelszó", actionTitle: "Cancel", actionStyle: .cancel)
-        }
+        RestClient.login(with: usernameTextField.text ?? "", password: passwordTextField.text ?? "", with: self)
     }
 
+}
+
+extension LoginViewController: LoginDelegate {
+    func loginDidFail(error: Error?) {
+        showAlert(title: "Hibás bejelentkezés", message: "Rossz felhasználónév vagy jelszó", actionTitle: "Cancel", actionStyle: .cancel)
+    }
+    
+    func loginDidSuccess(response: Token) {
+        NSLog("😊 Login Successful")
+        Constants.kAppDelegate.token = response
+        performSegue(withIdentifier: Constants.Segues.loginToNews, sender: self)
+    }
 }
