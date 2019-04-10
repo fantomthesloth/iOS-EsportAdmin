@@ -29,6 +29,7 @@ class RestClient: RestFunctions {
         self.shared.headers["Authorization"] = "Token \(token)"
     }
     
+    //Mark: Rest Functions
     static func login(with username: String, password: String, with delegate: LoginDelegate) {
         let url = "\(Constants.BaseApiUrl.url)/login"
         let params = ["password": password, "usernameOrEmail": username]
