@@ -10,11 +10,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol Networking {
+protocol RestFunctions {
     static func login(with username: String, password: String, with delegate: LoginDelegate)
 }
 
-class RestClient: Networking {
+class RestClient: RestFunctions {
     static let shared = RestClient()
     private init() {}
     
