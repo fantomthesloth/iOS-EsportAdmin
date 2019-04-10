@@ -19,8 +19,4 @@ class StartViewController: UIViewController {
     @IBAction func moveToLogin(_ sender: Any) {
         performSegue(withIdentifier: Constants.Segues.startToLogin, sender: self)
     }
-
-    @IBAction func moveToSignup(_ sender: Any) {
-        performSegue(withIdentifier: Constants.Segues.startToSignup, sender: self)
-    }
 }
