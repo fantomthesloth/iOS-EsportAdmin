@@ -19,3 +19,15 @@ class ProfileViewController: UIViewController {
     }
 
 }
+
+extension ProfileViewController: LoadProfileDelegate {
+    func loadProfileDidSuccess(response: MyUser) {
+        NSLog("😊 Loading profile successful")
+    }
+    
+    func loadProfileDidFail(error: Error?) {
+        NSLog("⚠️ Loading profile failed")
+    }
+    
+    
+}
