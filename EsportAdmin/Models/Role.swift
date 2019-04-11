@@ -7,8 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Role {
-    let id: String
-    let roleName: String
+    var id: String?
+    var roleName: String?
+    
+    init() {}
+    
+    init(json: JSON) {
+        self.id = json["id"].stringValue
+        self.roleName = json["roleName"].stringValue
+    }
 }
