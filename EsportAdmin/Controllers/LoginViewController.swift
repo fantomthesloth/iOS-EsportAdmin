@@ -43,7 +43,7 @@ extension LoginViewController: LoginDelegate {
     
     func loginDidSuccess(response: Token) {
         NSLog("😊 Login Successful")
-        Constants.kAppDelegate.token = response
+        Constants.kAppDelegate.token?.token = response.token
         performSegue(withIdentifier: Constants.Segues.loginToNews, sender: self)
     }
 }

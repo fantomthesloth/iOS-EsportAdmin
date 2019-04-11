@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         userPicture.layer.cornerRadius = userPicture.frame.size.width / 2
         userPicture.clipsToBounds = true
+        RestClient.loadUser(with: self)
         // Do any additional setup after loading the view.
     }
 

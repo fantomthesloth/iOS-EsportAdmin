@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 protocol RestFunctions {
+    static func loadUser(with delegate: LoadProfileDelegate)
     static func login(with username: String, password: String, with delegate: LoginDelegate)
 }
 
@@ -21,12 +22,12 @@ class RestClient: RestFunctions {
     var token: Token?
     
     private var headers = [
-        "Authorization": "Token \(UserDefaults.standard.value(forKey: Constants.UserDefaultsKeys.token) ?? "")",
+        "Authorization": "Bearer \(UserDefaults.standard.value(forKey: Constants.UserDefaultsKeys.token) ?? "")",
         "Content-Type": "application/json"
     ]
     
     static func updateToken(to token: String) {
-        self.shared.headers["Authorization"] = "Token \(token)"
+        self.shared.headers["Authorization"] = "Bearer \(token)"
     }
     
     //Mark: Rest Functions
@@ -40,6 +41,17 @@ class RestClient: RestFunctions {
         },fail: { error in
             delegate.loginDidFail(error: error)
         })
+    }
+    
+    static func loadUser(with delegate: LoadProfileDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/players/me"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            let myUser = MyUser(json: response)
+            delegate.loadProfileDidSuccess(response: myUser)
+        }) { (error) in
+            delegate.loadProfileDidFail(error: error)
+        }
     }
     
     //MARK: Private functions
