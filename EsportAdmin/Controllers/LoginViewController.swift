@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginFcn(_ sender: Any) {
-        RestClient.login(with: usernameTextField.text ?? "", password: passwordTextField.text ?? "", with: self)
+        RestClient.login(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "", delegate: self)
     }
 
 }

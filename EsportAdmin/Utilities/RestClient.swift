@@ -11,8 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 protocol RestFunctions {
-    static func loadUser(with delegate: LoadProfileDelegate)
-    static func login(with username: String, password: String, with delegate: LoginDelegate)
+    static func loadUser(delegate: LoadProfileDelegate)
+    static func login(username: String, password: String, delegate: LoginDelegate)
 }
 
 class RestClient: RestFunctions {
@@ -31,7 +31,7 @@ class RestClient: RestFunctions {
     }
     
     //Mark: Rest Functions
-    static func login(with username: String, password: String, with delegate: LoginDelegate) {
+    static func login(username: String, password: String, delegate: LoginDelegate) {
         let url = "\(Constants.BaseApiUrl.url)/login"
         let params = ["password": password, "usernameOrEmail": username]
         
@@ -43,7 +43,7 @@ class RestClient: RestFunctions {
         })
     }
     
-    static func loadUser(with delegate: LoadProfileDelegate) {
+    static func loadUser(delegate: LoadProfileDelegate) {
         let url = "\(Constants.BaseApiUrl.url)/players/me"
         
         shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
@@ -69,9 +69,14 @@ class RestClient: RestFunctions {
                           headers: head)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
-                print("Request: \(String(describing: response.request))")
-                print("Response: \(String(describing: response.response))")
-                print("Result: \(response.result)")
+                print("♻️ Request result: \(response.result)")
+                
+                if let json = response.result.value {
+                    NSLog("✨ JSON: \(json)")
+                    if let success = success {
+                        success(JSON(json))
+                    }
+                }
                 
                 if let error = response.error {
                     NSLog("⚠️ \(error)")
@@ -79,13 +84,6 @@ class RestClient: RestFunctions {
                         fail(error)
                     }
                     return
-                }
-                
-                if let json = response.result.value {
-                    print("✨ JSON: \(json)")
-                    if let success = success {
-                        success(JSON(json))
-                    }
                 }
         }
     }
@@ -104,9 +102,14 @@ class RestClient: RestFunctions {
                           headers: head)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
-                print("Request: \(String(describing: response.request))")
-                print("Response: \(String(describing: response.response))")
-                print("Result: \(response.result)")
+                print("♻️ Request result: \(response.result)")
+                
+                if let json = response.result.value {
+                    NSLog("✨ JSON: \(json)")
+                    if let success = success {
+                        success(JSON(json))
+                    }
+                }
                 
                 if let error = response.error {
                     NSLog("⚠️ \(error)")
@@ -114,13 +117,6 @@ class RestClient: RestFunctions {
                         fail(error)
                     }
                     return
-                }
-                
-                if let json = response.result.value {
-                    print("✨ JSON: \(json)") // serialized json response
-                    if let success = success {
-                        success(JSON(json))
-                    }
                 }
         }
     }
