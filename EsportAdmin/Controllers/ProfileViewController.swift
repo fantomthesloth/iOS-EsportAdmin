@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: LoadProfileDelegate {
     func loadProfileDidSuccess(response: MyUser) {
         NSLog("😊 Loading profile successful")
+        print(response.gameDetails)
     }
     
     func loadProfileDidFail(error: Error?) {

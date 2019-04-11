@@ -9,22 +9,22 @@
 import Foundation
 import SwiftyJSON
 
-struct Team {
+struct Teams {
     var id: String?
     var gameId: String?
     var name: String?
-    var membersId: [String]?
+    var membersId: [String]? = []
     var leaderId: String?
     
     init() {}
     
     init(json: JSON) {
-        self.id = json["id"].stringValue
-        self.gameId = json["gameId"].stringValue
-        self.name = json["name"].stringValue
+        self.id = json["id"].rawString()
+        self.gameId = json["gameId"].rawString()
+        self.name = json["name"].rawString()
         for membersId in json["membersId"] {
             self.membersId?.append(membersId.0)
         }
-        self.leaderId = json["leaderId"].stringValue
+        self.leaderId = json["leaderId"].rawString()
     }
 }

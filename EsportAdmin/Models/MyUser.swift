@@ -17,41 +17,41 @@ struct MyUser {
     var email: String?
     var profilePic: String?
     var birthday: String?
-    var roles: [Role]?
-    var teams: [Team]?
-    var games: [Game]?
-    var gameDetails: [GameDetail]?
+    var roles: [Roles]? = []
+    var teams: [Teams]? = []
+    var games: [Games]? = []
+    var gameDetails: [GameDetails]? = []
     
     
     init() {}
     
     init(json: JSON) {
-        self.id = json["id"].stringValue
-        self.firstName = json["firstName"].stringValue
-        self.lastName = json["lastName"].stringValue
-        self.username = json["username"].stringValue
-        self.email = json["email"].stringValue
-        self.profilePic = json["profilePic"].stringValue
-        self.birthday = json["birthday"].stringValue
+        self.id = json["id"].rawString()
+        self.firstName = json["firstName"].rawString()
+        self.lastName = json["lastName"].rawString()
+        self.username = json["username"].rawString()
+        self.email = json["email"].rawString()
+        self.profilePic = json["profilePic"].rawString()
+        self.birthday = json["birthday"].rawString()
        
         for roles in json["roles"] {
-            let roles = Role(json: roles.1)
-            self.roles?.append(roles)
+            let rolesModel = Roles(json: roles.1)
+            self.roles?.append(rolesModel)
         }
         
-        for teams in json["gameDetails"] {
-            let teams = Team(json: teams.1)
-            self.teams?.append(teams)
+        for teams in json["teams"] {
+            let teamsModel = Teams(json: teams.1)
+            self.teams?.append(teamsModel)
         }
         
         for games in json["games"] {
-            let games = Game(json: games.1)
-            self.games?.append(games)
+            let gamesModel = Games(json: games.1)
+            self.games?.append(gamesModel)
         }
         
-        for gameDetail in json["gameDetails"] {
-            let gameDetail = GameDetail(json: gameDetail.1)
-            self.gameDetails?.append(gameDetail)
+        for gameDetails in json["gameDetails"] {
+            let gameDetailsModel = GameDetails(json: gameDetails.1)
+            self.gameDetails?.append(gameDetailsModel)
         }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Game {
+struct Games {
     var id: String?
     var name: String?
     var alterName: String?
@@ -19,10 +19,10 @@ struct Game {
     init() {}
     
     init(json: JSON) {
-        self.id = json["id"].stringValue
-        self.name = json["name"].stringValue
-        self.alterName = json["alterName"].stringValue
-        self.middleLeaderID = json["middleLeaderID"].stringValue
+        self.id = json["id"].rawString()
+        self.name = json["name"].rawString()
+        self.alterName = json["alterName"].rawString()
+        self.middleLeaderID = json["middleLeaderID"].rawString()
         
     }
 }

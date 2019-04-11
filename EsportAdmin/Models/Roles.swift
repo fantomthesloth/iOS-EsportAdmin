@@ -9,14 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-struct Role {
+struct Roles {
     var id: String?
     var roleName: String?
     
     init() {}
     
     init(json: JSON) {
-        self.id = json["id"].stringValue
-        self.roleName = json["roleName"].stringValue
+        self.id = json["id"].rawString()
+        self.roleName = json["roleName"].rawString()
     }
 }

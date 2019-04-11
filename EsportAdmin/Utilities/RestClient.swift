@@ -70,6 +70,7 @@ class RestClient: RestFunctions {
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 print("♻️ Request result: \(response.result)")
+                print("♻️ Request response: \(response)")
                 
                 if let json = response.result.value {
                     NSLog("✨ JSON: \(json)")
@@ -103,6 +104,7 @@ class RestClient: RestFunctions {
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 print("♻️ Request result: \(response.result)")
+                print("♻️ Request response: \(response)")
                 
                 if let json = response.result.value {
                     NSLog("✨ JSON: \(json)")
