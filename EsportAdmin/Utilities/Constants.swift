@@ -19,8 +19,9 @@ struct Constants {
     struct BaseApiUrl {
         static let url = "https://deac-hackers-rest.herokuapp.com/api"
     }
-    struct NewsTable {
-        static let cellIdentifier = "myCell"
+    struct Cells {
+        static let newsCell = "NewsCell"
+        static let teamsCell = "TeamsCell"
     }
     
     struct UserDefaultsKeys {
@@ -28,8 +29,8 @@ struct Constants {
     }
     
     struct Segues {
-        static let startToLogin = "startToLogin"
-        static let loginToNews = "loginToNews"
-        static let newsToWeb = "newsToWeb"
+        static let loginToNews = "LoginToNews"
+        static let newsToWeb = "NewsToWeb"
+        static let segueToTeams = "SegueToTeams"
     }
 }
