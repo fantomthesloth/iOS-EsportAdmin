@@ -1,8 +1,25 @@
 PODS:
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
   - Alamofire (4.8.0)
+  - MGEvents (1.2.1)
+  - PromiseKit/Promise (1.7.7)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SGHTTPRequest/Core (1.9.0):
+    - AFNetworking/NSURLSession (~> 3.0)
+    - AFNetworking/Reachability (~> 3.0)
+    - MGEvents (~> 1.1)
+  - SGImageCache (2.5.0):
+    - MGEvents (~> 1.2)
+    - PromiseKit/Promise (~> 1.5)
+    - SGHTTPRequest/Core (~> 1.9)
   - SideMenu (5.0.3)
   - SnapKit (4.2.0)
   - SwiftyJSON (4.2.0)
@@ -10,25 +27,36 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - SDWebImage (~> 4.0)
+  - SGImageCache
   - SideMenu
   - SnapKit (~> 4.0)
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Alamofire
+    - MGEvents
+    - PromiseKit
     - SDWebImage
+    - SGHTTPRequest
+    - SGImageCache
     - SideMenu
     - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  MGEvents: 989c1396082a25e760f03056bdc0af1b6c439c78
+  PromiseKit: 9007df2f9e2ef725467084ab3880cf932ab935a4
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SGHTTPRequest: 93646208528eafd758052a92ee4dcf04e0d263c5
+  SGImageCache: f520e0560189a0bc1c01476810627d2b1806b6d9
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 0c65999ee30188181db8fd7ff72be81f3482b323
+PODFILE CHECKSUM: 2f0de0d25f3a32900dd8d9d893df4117494fce0e
 
 COCOAPODS: 1.5.3
