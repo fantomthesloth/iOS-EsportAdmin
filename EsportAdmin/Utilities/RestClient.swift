@@ -13,6 +13,7 @@ import SwiftyJSON
 protocol RestFunctions {
     static func loadUser(delegate: LoadProfileDelegate)
     static func login(username: String, password: String, delegate: LoginDelegate)
+    static func getUser(id: String, delegate: GetProfileDelegate)
 }
 
 class RestClient: RestFunctions {
@@ -51,6 +52,17 @@ class RestClient: RestFunctions {
             delegate.loadProfileDidSuccess(response: myUser)
         }) { (error) in
             delegate.loadProfileDidFail(error: error)
+        }
+    }
+    
+    static func getUser(id: String, delegate: GetProfileDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/players/\(id)"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: false, success: { (response) in
+            let user = MyUser(json: response)
+            delegate.getProfileDidSuccess(response: user)
+        }) { (error) in
+            delegate.getProfileDidFail(error: error)
         }
     }
     
