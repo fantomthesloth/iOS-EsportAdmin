@@ -31,8 +31,10 @@
 		A63E70FD21C3DE8700BA797C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63E70FC21C3DE8700BA797C /* WebKit.framework */; };
 		A63E70FF21C3FA3D00BA797C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */; };
 		A63E710521C7E8F300BA797C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E710421C7E8F300BA797C /* Constants.swift */; };
-		A63E710721C7EE0200BA797C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E710621C7EE0200BA797C /* StartViewController.swift */; };
 		A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */; };
+		A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17722679D620083C974 /* TeamsViewController.swift */; };
+		A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */; };
+		A6FDA17C2267C0E80083C974 /* GetProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +65,10 @@
 		A63E70FC21C3DE8700BA797C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A63E710421C7E8F300BA797C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A63E710621C7EE0200BA797C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A6FDA17722679D620083C974 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewCell.swift; sourceTree = "<group>"; };
+		A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileDelegate.swift; sourceTree = "<group>"; };
 		D333E2A59987968C1223EEFD /* Pods_EsportAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EsportAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */,
+				A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -121,7 +126,7 @@
 				A63E70F421C3B83C00BA797C /* NewsViewController.swift */,
 				A63E70F621C3B85400BA797C /* WebViewController.swift */,
 				A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */,
-				A63E710621C7EE0200BA797C /* StartViewController.swift */,
+				A6FDA17722679D620083C974 /* TeamsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				A62DB378225E7736004C3E84 /* LoginDelegate.swift */,
 				A62DB37F225E865E004C3E84 /* AlertProtocol.swift */,
 				A62DB383225E8C6F004C3E84 /* LoadProfileDelegate.swift */,
+				A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -350,11 +356,12 @@
 				A62DB37B225E77AB004C3E84 /* Token.swift in Sources */,
 				A63E70FB21C3BD1400BA797C /* NewsModel.swift in Sources */,
 				A63E70F921C3B8CD00BA797C /* NewsViewCell.swift in Sources */,
+				A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */,
 				A62DB376225E76C4004C3E84 /* RestClient.swift in Sources */,
 				A63E70FF21C3FA3D00BA797C /* LoginViewController.swift in Sources */,
 				A62DB390225E8EDC004C3E84 /* Teams.swift in Sources */,
 				A62DB382225E867C004C3E84 /* UIViewController+Alert.swift in Sources */,
-				A63E710721C7EE0200BA797C /* StartViewController.swift in Sources */,
+				A6FDA17C2267C0E80083C974 /* GetProfileDelegate.swift in Sources */,
 				A63E70E321C3B1D500BA797C /* AppDelegate.swift in Sources */,
 				A62DB380225E865E004C3E84 /* AlertProtocol.swift in Sources */,
 				A62DB379225E7736004C3E84 /* LoginDelegate.swift in Sources */,
@@ -363,6 +370,7 @@
 				A63E70F521C3B83C00BA797C /* NewsViewController.swift in Sources */,
 				A62DB388225E8EAA004C3E84 /* GameDetails.swift in Sources */,
 				A63E710521C7E8F300BA797C /* Constants.swift in Sources */,
+				A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */,
 				A62DB38C225E8EC5004C3E84 /* Roles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
