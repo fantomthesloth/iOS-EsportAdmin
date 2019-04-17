@@ -35,11 +35,10 @@ class TeamsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.teamsCell, for: indexPath) as? TeamsViewCell {
             
-            for user in otherUsers! {
-                for gameDetail in user.gameDetails! {
-                    if gameDetail.teamId == parentVC?.myUser?.teams?[indexPath.row].id {
-                        cell.bind(name: gameDetail.ign!)
-                    }
+            let teamId = parentVC?.myUser?.teams?[indexPath.row].id
+            for gameDetail in (parentVC?.myUser?.gameDetails)! {
+                if teamId == gameDetail.teamId {
+                    cell.bind(name: gameDetail.ign!)
                 }
             }
             tableView.tableFooterView = UIView()

@@ -33,13 +33,14 @@ class ProfileViewController: UIViewController {
         let firstName = myUser?.firstName ?? ""
         let lastName = myUser?.lastName ?? ""
         let ign = myUser?.gameDetails?[0].ign ?? ""
+        let profilePic = myUser?.profilePic ?? ""
         var games: [String] = []
         
         for game in (myUser?.games)!  {
             games.append(game.alterName!)
         }
         
-        userPicture.sd_setImage(with: URL(string: (myUser?.profilePic)!))
+        userPicture.sd_setImage(with: URL(string: profilePic))
         userNameLabel.text = "\(lastName) \(firstName)"
         userIgnLabel.text = "\(ign)"
         userGameLabel.text = games.joined(separator: ", ")
@@ -47,7 +48,9 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func showTeams(_ sender: Any) {
-
+        let vc: TeamsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamsViewController") as! TeamsViewController
+        vc.parentVC = self
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
