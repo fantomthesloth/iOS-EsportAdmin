@@ -58,7 +58,7 @@ class RestClient: RestFunctions {
     static func getUser(id: String, delegate: GetProfileDelegate) {
         let url = "\(Constants.BaseApiUrl.url)/players/\(id)"
         
-        shared.get(url: url, with: nil, isTokenNeeded: false, success: { (response) in
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
             let user = MyUser(json: response)
             delegate.getProfileDidSuccess(response: user)
         }) { (error) in

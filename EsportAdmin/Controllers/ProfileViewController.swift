@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userGameLabel: UILabel!
     
     var myUser: MyUser?
+    var teamMembers: [MyUser]? = []
     
     
     override func viewDidLoad() {
@@ -44,17 +45,25 @@ class ProfileViewController: UIViewController {
         userNameLabel.text = "\(lastName) \(firstName)"
         userIgnLabel.text = "\(ign)"
         userGameLabel.text = games.joined(separator: ", ")
+        
+        for team in (myUser?.teams)! {
+            for member in team.membersId! {
+                RestClient.getUser(id: member, delegate: self)
+            }
+        }
+        
     }
     
     
     @IBAction func showTeams(_ sender: Any) {
         let vc: TeamsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamsViewController") as! TeamsViewController
         vc.parentVC = self
+        vc.teamMembers = teamMembers
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension ProfileViewController: LoadProfileDelegate{
+extension ProfileViewController: LoadProfileDelegate {
     func loadProfileDidSuccess(response: MyUser) {
         self.myUser = response
         NSLog("😊 Loading profile successful")
@@ -64,4 +73,16 @@ extension ProfileViewController: LoadProfileDelegate{
     func loadProfileDidFail(error: Error?) {
         NSLog("⚠️ Loading profile failed")
     }
+}
+
+extension ProfileViewController: GetProfileDelegate {
+    func getProfileDidSuccess(response: MyUser) {
+        teamMembers?.append(response)
+    }
+    
+    func getProfileDidFail(error: Error?) {
+        NSLog("⚠️ Getting profile failed")
+    }
+    
+    
 }

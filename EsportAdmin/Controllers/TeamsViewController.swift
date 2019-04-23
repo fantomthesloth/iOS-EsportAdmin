@@ -10,7 +10,7 @@ import UIKit
 
 class TeamsViewController: UITableViewController {
     var parentVC: ProfileViewController?
-    var otherUsers: [MyUser]?
+    var teamMembers: [MyUser]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,12 @@ class TeamsViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.teamsCell, for: indexPath) as? TeamsViewCell {
             
             let teamId = parentVC?.myUser?.teams?[indexPath.row].id
-            for gameDetail in (parentVC?.myUser?.gameDetails)! {
-                if teamId == gameDetail.teamId {
-                    cell.bind(name: gameDetail.ign!)
+            
+            for player in teamMembers! {
+                for gameDetail in player.gameDetails! {
+                    if gameDetail.teamId == teamId {
+                        cell.bind(name: gameDetail.ign!)
+                    }
                 }
             }
             tableView.tableFooterView = UIView()

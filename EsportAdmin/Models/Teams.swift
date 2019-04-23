@@ -23,7 +23,8 @@ struct Teams {
         self.gameId = json["gameId"].rawString()
         self.name = json["name"].rawString()
         for membersId in json["membersId"] {
-            self.membersId?.append(membersId.0)
+            let memberId = membersId.1.rawString()
+            self.membersId?.append(memberId!)
         }
         self.leaderId = json["leaderId"].rawString()
     }
