@@ -18,7 +18,7 @@ struct News {
     var gameId: String?
     var id: String?
     var newsType: String?
-    var pictureUrls: [String]?
+    var pictureUrls: [String]? = []
     var teamId: String?
     var title: String?
     
@@ -27,7 +27,7 @@ struct News {
     init(json: JSON) {
         self.authorId = json["authorId"].rawString()
         self.authorName = json["authorName"].rawString()
-        self.authorPictureURL = json["authorPictureURL"].rawString()
+        self.authorPictureURL = json["authorPictureUrl"].rawString()
         self.content = json["content"].rawString()
         self.created = json["created"].rawString()
         self.gameId = json["gameId"].rawString()
@@ -35,7 +35,8 @@ struct News {
         self.newsType = json["newsType"].rawString()
         
         for pictureUrls in json["pictureUrls"] {
-            self.pictureUrls?.append(pictureUrls.1.rawString()!)
+            let pictureUrl = pictureUrls.1.rawString()
+            self.pictureUrls?.append(pictureUrl!)
         }
         
         self.teamId = json["teamId"].rawString()

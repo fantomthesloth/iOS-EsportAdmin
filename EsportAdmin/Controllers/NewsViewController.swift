@@ -12,16 +12,29 @@ import Alamofire
 
 
 class NewsViewController: UITableViewController {
-    @IBOutlet var tabeView: UITableView!
-    
     var articles: [News] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getNews()
+        
+    }
+    
+    func getNews() {
+        let url = "\(Constants.BaseApiUrl.url)/news/listMyNews"
+        
+        RestClient.shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            for news in response {
+                self.articles.append(News(json: news.1))
+            }
+            self.tableView.reloadData()
+        }) { (error) in
+            NSLog("\(error)")
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 345
+        return 300
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,8 +48,11 @@ class NewsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.newsCell, for: indexPath) as? NewsViewCell {
             let article = articles[indexPath.row]
+            let title = article.title!
+            let content = article.content!
+            let imageUrl = (article.pictureUrls?.isEmpty)! ? "" : article.pictureUrls?[0]
             
-            
+            cell.bind(title: title, description: content, imageUrl: imageUrl ?? "")
             
             return cell
         }
@@ -44,20 +60,20 @@ class NewsViewController: UITableViewController {
         return UITableViewCell()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.Segues.newsToWeb, sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.Segues.newsToWeb {
-            if let webvc = segue.destination as? WebViewController {
-                if let indexPath = tabeView.indexPathForSelectedRow {
-                    webvc.url = articles[indexPath.row].url
-                    tabeView.deselectRow(at: indexPath, animated: true)
-                }
-            }
-        }
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: Constants.Segues.newsToWeb, sender: self)
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == Constants.Segues.newsToWeb {
+//            if let webvc = segue.destination as? WebViewController {
+//                if let indexPath = tabeView.indexPathForSelectedRow {
+//                    webvc.url = articles[indexPath.row].url
+//                    tabeView.deselectRow(at: indexPath, animated: true)
+//                }
+//            }
+//        }
+//    }
     
     
 }

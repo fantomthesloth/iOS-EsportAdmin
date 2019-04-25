@@ -66,8 +66,7 @@ class RestClient: RestFunctions {
         }
     }
     
-    //MARK: Private functions
-    private func get(url: String, with data: [String: Any]?, isTokenNeeded: Bool, success: ((JSON) -> Void)?, fail: ((Error) -> Void)?) {
+    func get(url: String, with data: [String: Any]?, isTokenNeeded: Bool, success: ((JSON) -> Void)?, fail: ((Error) -> Void)?) {
         let head: [String: String]
         if isTokenNeeded {
             head = headers
