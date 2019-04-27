@@ -135,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A63E70E621C3B1D500BA797C /* Main.storyboard */,
+				A63E70EB21C3B1D700BA797C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -188,7 +189,6 @@
 				A63E70E921C3B1D700BA797C /* Assets.xcassets */,
 				A63E70EE21C3B1D700BA797C /* Info.plist */,
 				A63E70E221C3B1D500BA797C /* AppDelegate.swift */,
-				A63E70EB21C3B1D700BA797C /* LaunchScreen.storyboard */,
 			);
 			path = EsportAdmin;
 			sourceTree = "<group>";

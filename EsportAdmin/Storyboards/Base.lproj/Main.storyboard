@@ -26,23 +26,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="344.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TItle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjU-aB-aGp">
-                                            <rect key="frame" x="16" y="11" width="250" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asda" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjU-aB-aGp">
+                                            <rect key="frame" x="50" y="15" width="216" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd asd asd asd asd asd asd asd asd asd asd asd " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-kh-FDU">
-                                            <rect key="frame" x="16" y="55" width="250" height="31.5"/>
+                                            <rect key="frame" x="15" y="59" width="252" height="31.5"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F2v-HT-alN">
-                                            <rect key="frame" x="16" y="102.5" width="250" height="197.5"/>
+                                            <rect key="frame" x="16" y="106.5" width="250" height="197.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="250" id="D6Y-62-kBQ"/>
                                                 <constraint firstAttribute="width" secondItem="F2v-HT-alN" secondAttribute="height" multiplier="810:640" id="FAz-C6-WET"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecs-eA-adc">
+                                            <rect key="frame" x="10" y="15" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="JCl-ku-xoO"/>
+                                                <constraint firstAttribute="width" secondItem="ecs-eA-adc" secondAttribute="height" multiplier="1:1" id="ngJ-Tx-ZTX"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -50,16 +57,25 @@
                                         <constraint firstItem="ahI-kh-FDU" firstAttribute="top" secondItem="IjU-aB-aGp" secondAttribute="bottom" constant="20" id="1xc-1J-vn6"/>
                                         <constraint firstItem="F2v-HT-alN" firstAttribute="top" secondItem="ahI-kh-FDU" secondAttribute="bottom" constant="16" id="6yC-th-Dnj"/>
                                         <constraint firstItem="F2v-HT-alN" firstAttribute="centerX" secondItem="Xos-Vd-LKS" secondAttribute="centerX" id="8pj-Np-CMv"/>
+                                        <constraint firstItem="IjU-aB-aGp" firstAttribute="top" secondItem="ecs-eA-adc" secondAttribute="top" id="AsV-xE-kqk"/>
                                         <constraint firstItem="F2v-HT-alN" firstAttribute="leading" secondItem="Xos-Vd-LKS" secondAttribute="leadingMargin" id="BjJ-M1-1yb"/>
-                                        <constraint firstItem="IjU-aB-aGp" firstAttribute="leading" secondItem="Xos-Vd-LKS" secondAttribute="leadingMargin" id="NJP-XW-xr6"/>
+                                        <constraint firstItem="F2v-HT-alN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xos-Vd-LKS" secondAttribute="top" constant="10" id="Clr-er-uWg"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IjU-aB-aGp" secondAttribute="bottom" constant="10" id="EXi-W1-X4n"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="F2v-HT-alN" secondAttribute="bottom" constant="5" id="H70-u4-GQO"/>
+                                        <constraint firstItem="ecs-eA-adc" firstAttribute="leading" secondItem="Xos-Vd-LKS" secondAttribute="leading" constant="10" id="TBW-QE-MGQ"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ahI-kh-FDU" secondAttribute="bottom" constant="10" id="TIk-zu-9Xo"/>
                                         <constraint firstItem="F2v-HT-alN" firstAttribute="trailing" secondItem="Xos-Vd-LKS" secondAttribute="trailingMargin" id="cme-0E-Ow3"/>
-                                        <constraint firstItem="IjU-aB-aGp" firstAttribute="top" secondItem="Xos-Vd-LKS" secondAttribute="top" constant="11" id="h0j-tB-yXR"/>
-                                        <constraint firstAttribute="trailing" secondItem="ahI-kh-FDU" secondAttribute="trailing" constant="16" id="pKX-ox-oCt"/>
-                                        <constraint firstItem="ahI-kh-FDU" firstAttribute="leading" secondItem="Xos-Vd-LKS" secondAttribute="leading" constant="16" id="qRD-vx-nx1"/>
+                                        <constraint firstItem="IjU-aB-aGp" firstAttribute="leading" secondItem="ecs-eA-adc" secondAttribute="trailing" constant="10" id="fT1-9C-0Cp"/>
+                                        <constraint firstItem="ecs-eA-adc" firstAttribute="top" secondItem="Xos-Vd-LKS" secondAttribute="top" constant="15" id="gRG-Ff-zaT"/>
+                                        <constraint firstAttribute="trailing" secondItem="ahI-kh-FDU" secondAttribute="trailing" constant="15" id="pKX-ox-oCt"/>
+                                        <constraint firstItem="ahI-kh-FDU" firstAttribute="leading" secondItem="Xos-Vd-LKS" secondAttribute="leading" constant="15" id="qRD-vx-nx1"/>
                                         <constraint firstItem="IjU-aB-aGp" firstAttribute="trailing" secondItem="Xos-Vd-LKS" secondAttribute="trailingMargin" id="qj3-uv-J2W"/>
+                                        <constraint firstItem="ahI-kh-FDU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xos-Vd-LKS" secondAttribute="top" constant="10" id="uYO-oF-TeZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="articeImageWidthConstraint" destination="D6Y-62-kBQ" id="xEw-rk-A2d"/>
+                                    <outlet property="articleAuthorImage" destination="ecs-eA-adc" id="nTn-f7-O76"/>
                                     <outlet property="articleDescription" destination="ahI-kh-FDU" id="D2a-Hv-Ua6"/>
                                     <outlet property="articleImage" destination="F2v-HT-alN" id="suV-J3-JF5"/>
                                     <outlet property="articleTitle" destination="IjU-aB-aGp" id="Kft-ny-dgs"/>

@@ -34,7 +34,7 @@ class NewsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return UITableView.automaticDimension
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,32 +48,16 @@ class NewsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.newsCell, for: indexPath) as? NewsViewCell {
             let article = articles[indexPath.row]
+            let authorUrl = article.authorPictureURL!
             let title = article.title!
             let content = article.content!
             let imageUrl = (article.pictureUrls?.isEmpty)! ? "" : article.pictureUrls?[0]
-            
-            cell.bind(title: title, description: content, imageUrl: imageUrl ?? "")
+
+            cell.bind(authorUrl: authorUrl, title: title, content: content, imageUrl: imageUrl!)
             
             return cell
         }
         
         return UITableViewCell()
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: Constants.Segues.newsToWeb, sender: self)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == Constants.Segues.newsToWeb {
-//            if let webvc = segue.destination as? WebViewController {
-//                if let indexPath = tabeView.indexPathForSelectedRow {
-//                    webvc.url = articles[indexPath.row].url
-//                    tabeView.deselectRow(at: indexPath, animated: true)
-//                }
-//            }
-//        }
-//    }
-    
-    
 }

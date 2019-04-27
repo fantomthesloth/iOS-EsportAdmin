@@ -13,20 +13,25 @@ class NewsViewCell: UITableViewCell {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleDescription: UILabel!
     @IBOutlet weak var articleImage: UIImageView!
+    @IBOutlet weak var articleAuthorImage: UIImageView!
+    @IBOutlet weak var articeImageWidthConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        articleAuthorImage.layer.cornerRadius = articleAuthorImage.frame.size.width / 2
+        articleAuthorImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func bind(title: String, description: String, imageUrl: String) {
-        let url = URL(string: imageUrl)
+    func bind(authorUrl: String, title: String, content: String, imageUrl: String) {
+        let imageUrl = URL(string: imageUrl)
+        let authorUrl = URL(string: authorUrl)
+        articleAuthorImage.sd_setImage(with: authorUrl)
         articleTitle.text = title
-        articleDescription.text = description
-        articleImage.sd_setImage(with: url)
+        articleDescription.text = content
+        articleImage.sd_setImage(with: imageUrl)
     }
-
 }
