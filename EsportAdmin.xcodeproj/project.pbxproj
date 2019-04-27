@@ -26,7 +26,6 @@
 		A63E70EA21C3B1D700BA797C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63E70E921C3B1D700BA797C /* Assets.xcassets */; };
 		A63E70ED21C3B1D700BA797C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63E70EB21C3B1D700BA797C /* LaunchScreen.storyboard */; };
 		A63E70F521C3B83C00BA797C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E70F421C3B83C00BA797C /* NewsViewController.swift */; };
-		A63E70F721C3B85400BA797C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E70F621C3B85400BA797C /* WebViewController.swift */; };
 		A63E70F921C3B8CD00BA797C /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */; };
 		A63E70FD21C3DE8700BA797C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63E70FC21C3DE8700BA797C /* WebKit.framework */; };
 		A63E70FF21C3FA3D00BA797C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */; };
@@ -62,7 +61,6 @@
 		A63E70EC21C3B1D700BA797C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63E70EE21C3B1D700BA797C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EsportAdmin/Info.plist; sourceTree = SOURCE_ROOT; };
 		A63E70F421C3B83C00BA797C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		A63E70F621C3B85400BA797C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
 		A63E70FC21C3DE8700BA797C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			children = (
 				A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */,
 				A63E70F421C3B83C00BA797C /* NewsViewController.swift */,
-				A63E70F621C3B85400BA797C /* WebViewController.swift */,
 				A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */,
 				A6FDA17722679D620083C974 /* TeamsViewController.swift */,
 			);
@@ -366,7 +363,6 @@
 			files = (
 				A62DB384225E8C6F004C3E84 /* LoadProfileDelegate.swift in Sources */,
 				A62DB386225E8CE6004C3E84 /* MyUser.swift in Sources */,
-				A63E70F721C3B85400BA797C /* WebViewController.swift in Sources */,
 				A62DB37E225E7C5C004C3E84 /* UserDefaults+isKeyPresent.swift in Sources */,
 				A62DB37B225E77AB004C3E84 /* Token.swift in Sources */,
 				A63E70F921C3B8CD00BA797C /* NewsViewCell.swift in Sources */,

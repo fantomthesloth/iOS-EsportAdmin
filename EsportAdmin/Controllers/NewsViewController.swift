@@ -11,12 +11,17 @@ import SwiftyJSON
 import Alamofire
 
 
-class NewsViewController: UITableViewController {
+class NewsViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var articles: [News] = []
     var loadingScreen: LoadingScreen?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.isUserInteractionEnabled = false
+        
         addLoadingScreen()
         getNews()
     }
@@ -44,33 +49,34 @@ class NewsViewController: UITableViewController {
             NSLog("\(error)")
         }
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+}
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.newsCell, for: indexPath) as? NewsViewCell {
             let article = articles[indexPath.row]
             let authorUrl = article.authorPictureURL!
             let title = article.title!
             let content = article.content!
             let imageUrl = (article.pictureUrls?.isEmpty)! ? "" : article.pictureUrls?[0]
-
+            
             cell.bind(authorUrl: authorUrl, title: title, content: content, imageUrl: imageUrl!)
             
             tableView.tableFooterView = UIView()
             return cell
         }
-        
         return UITableViewCell()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
     }
 }
