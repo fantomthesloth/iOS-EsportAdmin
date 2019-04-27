@@ -14,16 +14,24 @@ import Alamofire
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addNewArticleButton: UIButton!
     
     var articles: [News] = []
     var loadingScreen: LoadingScreen?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.isUserInteractionEnabled = false
-        
+
+        initialSetup()
         addLoadingScreen()
         getNews()
+    }
+    
+    func initialSetup() {
+//        tableView.isUserInteractionEnabled = false
+        addNewArticleButton.titleLabel?.baselineAdjustment = .alignCenters
+        addNewArticleButton.layer.cornerRadius = addNewArticleButton.frame.height/2.0
+        addNewArticleButton.setImage(UIImage(named: "add (1).png")?.imageWithColor(color1: .white), for: .normal)
     }
     
     func addLoadingScreen() {

@@ -32,6 +32,7 @@
 		A63E710521C7E8F300BA797C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E710421C7E8F300BA797C /* Constants.swift */; };
 		A6577C692274609C00418EED /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6577C672274609C00418EED /* LoadingScreen.xib */; };
 		A6577C6A2274609C00418EED /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6577C682274609C00418EED /* LoadingScreen.swift */; };
+		A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */; };
 		A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */; };
 		A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17722679D620083C974 /* TeamsViewController.swift */; };
 		A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */; };
@@ -67,6 +68,7 @@
 		A63E710421C7E8F300BA797C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6577C672274609C00418EED /* LoadingScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
 		A6577C682274609C00418EED /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageWithColor.swift"; sourceTree = "<group>"; };
 		A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A6FDA17722679D620083C974 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewCell.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				A62DB37D225E7C5C004C3E84 /* UserDefaults+isKeyPresent.swift */,
 				A62DB381225E867C004C3E84 /* UIViewController+Alert.swift */,
+				A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				A62DB38A225E8EB8004C3E84 /* Games.swift in Sources */,
 				A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */,
 				A62134F1226FC3D400610380 /* News.swift in Sources */,
+				A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */,
 				A63E70F521C3B83C00BA797C /* NewsViewController.swift in Sources */,
 				A62DB388225E8EAA004C3E84 /* GameDetails.swift in Sources */,
 				A6577C6A2274609C00418EED /* LoadingScreen.swift in Sources */,

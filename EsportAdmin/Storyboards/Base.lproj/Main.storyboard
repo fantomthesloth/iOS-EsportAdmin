@@ -90,6 +90,17 @@
                                     <outlet property="delegate" destination="hVY-NV-Z6N" id="8nY-pi-4KE"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bn6-tC-8om">
+                                <rect key="frame" x="320" y="612" width="35" height="35"/>
+                                <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bn6-tC-8om" secondAttribute="height" multiplier="1:1" id="6rg-aC-riu"/>
+                                    <constraint firstAttribute="width" constant="35" id="eIa-2d-Xh9"/>
+                                </constraints>
+                                <state key="normal" image="add (1)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -97,6 +108,8 @@
                             <constraint firstItem="85I-L5-Yhk" firstAttribute="top" secondItem="xNo-BD-fuj" secondAttribute="top" id="R3o-W0-fVM"/>
                             <constraint firstItem="85I-L5-Yhk" firstAttribute="leading" secondItem="xNo-BD-fuj" secondAttribute="leading" id="RIc-89-1RO"/>
                             <constraint firstItem="xNo-BD-fuj" firstAttribute="trailing" secondItem="85I-L5-Yhk" secondAttribute="trailing" id="ZB0-dX-CfN"/>
+                            <constraint firstItem="xNo-BD-fuj" firstAttribute="bottom" secondItem="Bn6-tC-8om" secondAttribute="bottom" constant="20" id="oVZ-iK-mvG"/>
+                            <constraint firstItem="xNo-BD-fuj" firstAttribute="trailing" secondItem="Bn6-tC-8om" secondAttribute="trailing" constant="20" id="skT-73-oXa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xNo-BD-fuj"/>
                     </view>
@@ -108,12 +121,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNewArticleButton" destination="Bn6-tC-8om" id="v7I-Ji-UH5"/>
                         <outlet property="tableView" destination="85I-L5-Yhk" id="54r-H7-gk6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqE-WE-64g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="269"/>
+            <point key="canvasLocation" x="733.60000000000002" y="268.51574212893553"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="oL3-aT-W2j">
@@ -463,6 +477,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add (1)" width="15.75" height="15.75"/>
         <image name="menu (1)" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
