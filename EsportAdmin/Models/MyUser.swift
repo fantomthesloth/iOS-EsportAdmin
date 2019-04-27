@@ -19,7 +19,6 @@ struct MyUser {
     var birthday: String?
     var roles: [Roles]? = []
     var teams: [Teams]? = []
-    var games: [Games]? = []
     var gameDetails: [GameDetails]? = []
     
     
@@ -42,11 +41,6 @@ struct MyUser {
         for teams in json["teams"] {
             let teamsModel = Teams(json: teams.1)
             self.teams?.append(teamsModel)
-        }
-        
-        for games in json["games"] {
-            let gamesModel = Games(json: games.1)
-            self.games?.append(gamesModel)
         }
         
         for gameDetails in json["gameDetails"] {

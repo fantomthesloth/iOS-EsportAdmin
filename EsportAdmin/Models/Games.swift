@@ -22,7 +22,7 @@ struct Games {
         self.id = json["id"].rawString()
         self.name = json["name"].rawString()
         self.alterName = json["alterName"].rawString()
-        self.middleLeaderID = json["middleLeaderID"].rawString()
+        self.middleLeaderID = json["middleLeaderId"].rawString()
         
     }
 }

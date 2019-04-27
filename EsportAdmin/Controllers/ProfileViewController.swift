@@ -14,15 +14,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userIgnLabel: UILabel!
     @IBOutlet weak var userGameLabel: UILabel!
+    @IBOutlet weak var myTeamsButton: UIButton!
     
     var myUser: MyUser?
     var teamMembers: [MyUser]? = []
+    var loadingScreen: LoadingScreen?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userPicture.layer.cornerRadius = userPicture.frame.size.width / 2
-        userPicture.clipsToBounds = true
+        
+        addLoadingScreen()
+        initialSetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,30 +33,51 @@ class ProfileViewController: UIViewController {
         RestClient.loadUser(delegate: self)
     }
     
+    func initialSetup() {
+        userPicture.layer.cornerRadius = userPicture.frame.size.width / 2
+        userPicture.clipsToBounds = true
+        userPicture.layer.borderWidth = 3.5
+        userPicture.layer.borderColor = UIColor.lightGray.cgColor
+        myTeamsButton.layer.cornerRadius = 8.0
+    }
+    
+    func addLoadingScreen() {
+        loadingScreen = LoadingScreen(frame: self.view.frame)
+        self.view.addSubview(loadingScreen!)
+        self.view.bringSubviewToFront(loadingScreen!)
+    }
+    
+    func removeLoadingScreen() {
+        loadingScreen?.removeFromSuperview()
+    }
+    
     func setupContent() {
         let firstName = myUser?.firstName ?? ""
         let lastName = myUser?.lastName ?? ""
-        let ign = myUser?.gameDetails?[0].ign ?? ""
+        let username = myUser?.username ?? ""
         let profilePic = myUser?.profilePic ?? ""
         var games: [String] = []
         
-        for game in (myUser?.games)!  {
-            games.append(game.alterName!)
+        for gameDetail in (myUser?.gameDetails)! {
+            games.append((gameDetail.game?.name)!)
         }
         
         userPicture.sd_setImage(with: URL(string: profilePic))
         userNameLabel.text = "\(lastName) \(firstName)"
-        userIgnLabel.text = "\(ign)"
-        userGameLabel.text = games.joined(separator: ", ")
+        userIgnLabel.text = "\(username)"
+        userGameLabel.text = games.joined(separator: ",\n")
         
+        getTeamMembers()
+        removeLoadingScreen()
+    }
+    
+    func getTeamMembers() {
         for team in (myUser?.teams)! {
             for member in team.membersId! {
                 RestClient.getUser(id: member, delegate: self)
             }
         }
-        
     }
-    
     
     @IBAction func showTeams(_ sender: Any) {
         let vc: TeamsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamsViewController") as! TeamsViewController

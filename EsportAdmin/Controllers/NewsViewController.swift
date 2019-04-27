@@ -13,11 +13,22 @@ import Alamofire
 
 class NewsViewController: UITableViewController {
     var articles: [News] = []
+    var loadingScreen: LoadingScreen?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addLoadingScreen()
         getNews()
-        
+    }
+    
+    func addLoadingScreen() {
+        loadingScreen = LoadingScreen(frame: self.view.frame)
+        self.view.addSubview(loadingScreen!)
+        self.view.bringSubviewToFront(loadingScreen!)
+    }
+    
+    func removeLoadingScreen() {
+        loadingScreen?.removeFromSuperview()
     }
     
     func getNews() {
@@ -28,6 +39,7 @@ class NewsViewController: UITableViewController {
                 self.articles.append(News(json: news.1))
             }
             self.tableView.reloadData()
+            self.removeLoadingScreen()
         }) { (error) in
             NSLog("\(error)")
         }
@@ -55,6 +67,7 @@ class NewsViewController: UITableViewController {
 
             cell.bind(authorUrl: authorUrl, title: title, content: content, imageUrl: imageUrl!)
             
+            tableView.tableFooterView = UIView()
             return cell
         }
         

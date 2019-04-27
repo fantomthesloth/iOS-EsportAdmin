@@ -40,7 +40,7 @@ class TeamsViewController: UITableViewController {
             for player in teamMembers! {
                 for gameDetail in player.gameDetails! {
                     if gameDetail.teamId == teamId {
-                        cell.bind(name: gameDetail.ign!)
+                        cell.bind(name: gameDetail.ign!, role: gameDetail.teamRole!)
                     }
                 }
             }

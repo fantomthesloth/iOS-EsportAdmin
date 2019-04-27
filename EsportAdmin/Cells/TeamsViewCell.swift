@@ -10,6 +10,7 @@ import UIKit
 
 class TeamsViewCell: UITableViewCell {
     @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playerRole: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,8 +21,9 @@ class TeamsViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func bind(name: String) {
+    func bind(name: String, role: String) {
         playerName.text = name
+        playerRole.text = role
     }
 
 }
