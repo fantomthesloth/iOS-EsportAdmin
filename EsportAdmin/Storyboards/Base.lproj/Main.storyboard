@@ -169,10 +169,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cj-qX-VHF">
-                                <rect key="frame" x="142" y="514" width="91" height="22"/>
+                                <rect key="frame" x="148" y="514" width="79" height="32"/>
                                 <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Küldés">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -361,6 +361,18 @@
                                     <action selector="showTeams:" destination="W61-Xl-UJz" eventType="touchUpInside" id="rHz-Xb-D2w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0s-NJ-uMV">
+                                <rect key="frame" x="157" y="279" width="193" height="32"/>
+                                <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Versenynevezéseim">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showEntries:" destination="W61-Xl-UJz" eventType="touchUpInside" id="xAP-Zg-RW7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -372,11 +384,13 @@
                             <constraint firstItem="UO8-5M-ApA" firstAttribute="top" secondItem="cG4-3k-wma" secondAttribute="bottom" constant="5" id="CfO-W8-NZk"/>
                             <constraint firstItem="Unp-a6-JaX" firstAttribute="top" secondItem="KU2-cU-LOi" secondAttribute="top" id="F2v-4D-DAA"/>
                             <constraint firstItem="cG4-3k-wma" firstAttribute="centerX" secondItem="Xde-Bg-Qkq" secondAttribute="centerX" id="Rvx-cM-vvL"/>
+                            <constraint firstItem="S0s-NJ-uMV" firstAttribute="top" secondItem="ijU-Jz-62y" secondAttribute="top" id="Wpa-qJ-R38"/>
                             <constraint firstItem="ijU-Jz-62y" firstAttribute="top" secondItem="Unp-a6-JaX" secondAttribute="bottom" constant="20" id="aoW-sw-D7C"/>
                             <constraint firstItem="Xz6-eG-w8s" firstAttribute="centerX" secondItem="Xde-Bg-Qkq" secondAttribute="centerX" id="fVU-CS-xmp"/>
                             <constraint firstItem="Xz6-eG-w8s" firstAttribute="leading" secondItem="CdS-rw-p4g" secondAttribute="leading" id="fgb-ip-LGv"/>
                             <constraint firstItem="UO8-5M-ApA" firstAttribute="centerX" secondItem="cG4-3k-wma" secondAttribute="centerX" id="kBu-p0-y3g"/>
                             <constraint firstItem="Xde-Bg-Qkq" firstAttribute="top" secondItem="xc5-vt-ScC" secondAttribute="top" constant="30" id="nJc-ho-HPD"/>
+                            <constraint firstItem="xc5-vt-ScC" firstAttribute="trailing" secondItem="S0s-NJ-uMV" secondAttribute="trailing" constant="25" id="seh-2X-TVf"/>
                             <constraint firstItem="KU2-cU-LOi" firstAttribute="leading" secondItem="xc5-vt-ScC" secondAttribute="leading" constant="25" id="sqm-Lg-tcs"/>
                             <constraint firstItem="cG4-3k-wma" firstAttribute="top" secondItem="Xde-Bg-Qkq" secondAttribute="bottom" constant="10" id="vBS-ZP-Qe0"/>
                             <constraint firstItem="xc5-vt-ScC" firstAttribute="trailing" secondItem="Unp-a6-JaX" secondAttribute="trailing" constant="10" id="wHz-ny-Wj5"/>
@@ -393,17 +407,46 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="myEntriesButton" destination="S0s-NJ-uMV" id="CGf-1l-fa5"/>
                         <outlet property="myTeamsButton" destination="ijU-Jz-62y" id="kGL-Ir-fv4"/>
                         <outlet property="userGameLabel" destination="Unp-a6-JaX" id="H7x-fM-BlA"/>
                         <outlet property="userIgnLabel" destination="UO8-5M-ApA" id="WqC-xe-cx9"/>
                         <outlet property="userNameLabel" destination="cG4-3k-wma" id="FWR-wu-DRM"/>
                         <outlet property="userPicture" destination="Xde-Bg-Qkq" id="Yn3-dk-l1X"/>
-                        <segue destination="fNa-Dg-UKQ" kind="show" identifier="SegueToTeams" id="w55-HK-nkV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egF-d5-d1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1601" y="1147"/>
+        </scene>
+        <!--Versenynevezések-->
+        <scene sceneID="gWZ-Sc-dQF">
+            <objects>
+                <tableViewController id="GK0-LS-FtH" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wtE-s8-EEI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="e6X-Yf-xbg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6X-Yf-xbg" id="Sql-l1-ZIR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GK0-LS-FtH" id="zBp-1G-lRM"/>
+                            <outlet property="delegate" destination="GK0-LS-FtH" id="2GJ-mP-7O5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Versenynevezések" id="GkT-LM-fDs"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3k-57-WbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2458" y="1570"/>
         </scene>
         <!--Csapatok-->
         <scene sceneID="tRs-ko-PsF">
@@ -475,7 +518,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPf-TK-sIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="1147"/>
+            <point key="canvasLocation" x="2450" y="874"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mtv-RL-5er">

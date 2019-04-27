@@ -15,6 +15,8 @@ protocol RestFunctions {
     static func login(username: String, password: String, delegate: LoginDelegate)
     static func searchPlayer(id: String, delegate: SearchProfileDelegate)
     static func postArticle(authorId: String, authorName: String, authorPicUrl: String, title: String, content: String, created: String, delegate: PostArticleDelegate)
+    static func searchTeam(teamName: String, delegate: SearchTeamDelegate)
+    static func searchPlayerByUsername(username: String, delegate: SearchProfileDelegate)
 }
 
 class RestClient: RestFunctions {
@@ -113,6 +115,17 @@ class RestClient: RestFunctions {
             delegate.searchProfileDidSuccess(response: user)
         }) { (error) in
             delegate.searchProfileDidFail(error: error)
+        }
+    }
+    
+    static func getEntries(playerId: String, delegate: GetEntriesDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/entries/\(playerId)"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            let entry = Entry(json: response)
+            delegate.getEntriesDidSucces(response: entry)
+        }) { (error) in
+            delegate.getEntriesDidFail(error: error)
         }
     }
     

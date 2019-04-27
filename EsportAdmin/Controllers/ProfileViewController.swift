@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userIgnLabel: UILabel!
     @IBOutlet weak var userGameLabel: UILabel!
     @IBOutlet weak var myTeamsButton: UIButton!
+    @IBOutlet weak var myEntriesButton: UIButton!
     
     var myUser: MyUser?
     var teamMembers: [MyUser]? = []
@@ -39,6 +40,7 @@ class ProfileViewController: UIViewController {
         userPicture.layer.borderWidth = 3.5
         userPicture.layer.borderColor = UIColor.lightGray.cgColor
         myTeamsButton.layer.cornerRadius = 8.0
+        myEntriesButton.layer.cornerRadius = 8.0
     }
     
     func addLoadingScreen() {
@@ -68,6 +70,7 @@ class ProfileViewController: UIViewController {
         userGameLabel.text = games.joined(separator: ",\n")
         
         getTeamMembers()
+        getEntries()
         removeLoadingScreen()
     }
     
@@ -79,11 +82,18 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    func getEntries() {
+        
+    }
+    
     @IBAction func showTeams(_ sender: Any) {
         let vc: TeamsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamsViewController") as! TeamsViewController
         vc.parentVC = self
         vc.teamMembers = teamMembers
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func showEntries(_ sender: Any) {
     }
 }
 
