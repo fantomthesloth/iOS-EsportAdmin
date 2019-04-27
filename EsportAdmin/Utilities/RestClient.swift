@@ -122,8 +122,10 @@ class RestClient: RestFunctions {
         let url = "\(Constants.BaseApiUrl.url)/entries/\(playerId)"
         
         shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
-            let entry = Entry(json: response)
-            delegate.getEntriesDidSucces(response: entry)
+            for entry in response {
+                let entry = Entry(json: entry.1)
+                delegate.getEntriesDidSucces(response: entry)
+            }
         }) { (error) in
             delegate.getEntriesDidFail(error: error)
         }

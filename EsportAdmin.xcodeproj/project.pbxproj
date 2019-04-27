@@ -38,6 +38,8 @@
 		A68C5A9E227501A5006002C6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9D227501A5006002C6 /* Entry.swift */; };
 		A68C5AA022750512006002C6 /* SearchTeamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9F22750512006002C6 /* SearchTeamDelegate.swift */; };
 		A68C5AA222750D12006002C6 /* GetEntriesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5AA122750D12006002C6 /* GetEntriesDelegate.swift */; };
+		A68C5AA622751081006002C6 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5AA522751081006002C6 /* EntryViewController.swift */; };
+		A68C5AA822751697006002C6 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5AA722751697006002C6 /* EntryViewCell.swift */; };
 		A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */; };
 		A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17722679D620083C974 /* TeamsViewController.swift */; };
 		A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */; };
@@ -79,6 +81,8 @@
 		A68C5A9D227501A5006002C6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		A68C5A9F22750512006002C6 /* SearchTeamDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamDelegate.swift; sourceTree = "<group>"; };
 		A68C5AA122750D12006002C6 /* GetEntriesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntriesDelegate.swift; sourceTree = "<group>"; };
+		A68C5AA522751081006002C6 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = "/Users/deik/iOS-EsportAdmin/EsportAdmin/Controllers/EntryViewController.swift"; sourceTree = "<absolute>"; };
+		A68C5AA722751697006002C6 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
 		A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A6FDA17722679D620083C974 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				A63E70F821C3B8CD00BA797C /* NewsViewCell.swift */,
 				A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */,
+				A68C5AA722751697006002C6 /* EntryViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				A63E70F421C3B83C00BA797C /* NewsViewController.swift */,
 				A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */,
 				A6FDA17722679D620083C974 /* TeamsViewController.swift */,
+				A68C5AA522751081006002C6 /* EntryViewController.swift */,
 				A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */,
 			);
 			path = Controllers;
@@ -390,6 +396,7 @@
 				A63E70FF21C3FA3D00BA797C /* LoginViewController.swift in Sources */,
 				A62DB390225E8EDC004C3E84 /* Teams.swift in Sources */,
 				A62DB382225E867C004C3E84 /* UIViewController+Alert.swift in Sources */,
+				A68C5AA622751081006002C6 /* EntryViewController.swift in Sources */,
 				A6FDA17C2267C0E80083C974 /* SearchProfileDelegate.swift in Sources */,
 				A63E70E321C3B1D500BA797C /* AppDelegate.swift in Sources */,
 				A62DB380225E865E004C3E84 /* AlertProtocol.swift in Sources */,
@@ -402,6 +409,7 @@
 				A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */,
 				A63E70F521C3B83C00BA797C /* NewsViewController.swift in Sources */,
 				A68C5A9A2274A5BF006002C6 /* PostArticleDelegate.swift in Sources */,
+				A68C5AA822751697006002C6 /* EntryViewCell.swift in Sources */,
 				A62DB388225E8EAA004C3E84 /* GameDetails.swift in Sources */,
 				A6577C6A2274609C00418EED /* LoadingScreen.swift in Sources */,
 				A68C5A9822747AB2006002C6 /* AddArticleViewController.swift in Sources */,

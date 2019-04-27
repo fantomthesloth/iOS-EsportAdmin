@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     
     var myUser: MyUser?
     var teamMembers: [MyUser]? = []
+    var entries: [Entry]? = []
     var loadingScreen: LoadingScreen?
     
     
@@ -71,7 +72,6 @@ class ProfileViewController: UIViewController {
         
         getTeamMembers()
         getEntries()
-        removeLoadingScreen()
     }
     
     func getTeamMembers() {
@@ -83,7 +83,9 @@ class ProfileViewController: UIViewController {
     }
     
     func getEntries() {
-        
+        entries?.removeAll()
+        let userId = myUser?.id ?? ""
+        RestClient.getEntries(playerId: userId, delegate: self)
     }
     
     @IBAction func showTeams(_ sender: Any) {
@@ -94,6 +96,10 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showEntries(_ sender: Any) {
+        let vc: EntryViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EntryViewController") as! EntryViewController
+        vc.parentVC = self
+        vc.entries = entries
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -116,6 +122,17 @@ extension ProfileViewController: SearchProfileDelegate {
     
     func searchProfileDidFail(error: Error?) {
         NSLog("⚠️ Getting profile failed")
+    }
+}
+
+extension ProfileViewController: GetEntriesDelegate {
+    func getEntriesDidSucces(response: Entry) {
+        self.entries?.append(response)
+        removeLoadingScreen()
+    }
+    
+    func getEntriesDidFail(error: Error?) {
+        NSLog("⚠️ Getting entry failed")
     }
     
     

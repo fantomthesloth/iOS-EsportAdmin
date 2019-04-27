@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/deik/iOS-EsportAdmin/EsportAdmin/Controllers/EntryViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:EsportAdmin.xcodeproj">
    </FileRef>
    <FileRef

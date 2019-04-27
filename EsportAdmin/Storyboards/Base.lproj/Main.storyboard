@@ -422,7 +422,7 @@
         <!--Versenynevezések-->
         <scene sceneID="gWZ-Sc-dQF">
             <objects>
-                <tableViewController id="GK0-LS-FtH" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EntryViewController" id="GK0-LS-FtH" customClass="EntryViewController" customModule="EsportAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wtE-s8-EEI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
