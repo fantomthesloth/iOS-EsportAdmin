@@ -33,6 +33,8 @@
 		A6577C692274609C00418EED /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6577C672274609C00418EED /* LoadingScreen.xib */; };
 		A6577C6A2274609C00418EED /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6577C682274609C00418EED /* LoadingScreen.swift */; };
 		A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */; };
+		A68C5A9822747AB2006002C6 /* AddArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */; };
+		A68C5A9A2274A5BF006002C6 /* PostArticleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A992274A5BF006002C6 /* PostArticleDelegate.swift */; };
 		A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */; };
 		A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17722679D620083C974 /* TeamsViewController.swift */; };
 		A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */; };
@@ -69,6 +71,8 @@
 		A6577C672274609C00418EED /* LoadingScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
 		A6577C682274609C00418EED /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageWithColor.swift"; sourceTree = "<group>"; };
+		A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArticleViewController.swift; sourceTree = "<group>"; };
+		A68C5A992274A5BF006002C6 /* PostArticleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArticleDelegate.swift; sourceTree = "<group>"; };
 		A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A6FDA17722679D620083C974 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				A63E70F421C3B83C00BA797C /* NewsViewController.swift */,
 				A63E70FE21C3FA3D00BA797C /* LoginViewController.swift */,
 				A6FDA17722679D620083C974 /* TeamsViewController.swift */,
+				A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				A62DB37F225E865E004C3E84 /* AlertProtocol.swift */,
 				A62DB383225E8C6F004C3E84 /* LoadProfileDelegate.swift */,
 				A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */,
+				A68C5A992274A5BF006002C6 /* PostArticleDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -383,8 +389,10 @@
 				A62134F1226FC3D400610380 /* News.swift in Sources */,
 				A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */,
 				A63E70F521C3B83C00BA797C /* NewsViewController.swift in Sources */,
+				A68C5A9A2274A5BF006002C6 /* PostArticleDelegate.swift in Sources */,
 				A62DB388225E8EAA004C3E84 /* GameDetails.swift in Sources */,
 				A6577C6A2274609C00418EED /* LoadingScreen.swift in Sources */,
+				A68C5A9822747AB2006002C6 /* AddArticleViewController.swift in Sources */,
 				A63E710521C7E8F300BA797C /* Constants.swift in Sources */,
 				A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */,
 				A62DB38C225E8EC5004C3E84 /* Roles.swift in Sources */,

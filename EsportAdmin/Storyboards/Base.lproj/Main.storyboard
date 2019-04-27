@@ -100,6 +100,9 @@
                                 <state key="normal" image="add (1)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="showAddArticle:" destination="hVY-NV-Z6N" eventType="touchUpInside" id="M1g-br-piN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,11 +126,87 @@
                     <connections>
                         <outlet property="addNewArticleButton" destination="Bn6-tC-8om" id="v7I-Ji-UH5"/>
                         <outlet property="tableView" destination="85I-L5-Yhk" id="54r-H7-gk6"/>
+                        <segue destination="O2A-QH-bZV" kind="show" identifier="NewsToAddArticle" id="ppo-11-wnK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqE-WE-64g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733.60000000000002" y="268.51574212893553"/>
+            <point key="canvasLocation" x="734" y="-500"/>
+        </scene>
+        <!--Add Article View Controller-->
+        <scene sceneID="azc-hn-EeT">
+            <objects>
+                <viewController storyboardIdentifier="AddArticleViewController" id="O2A-QH-bZV" customClass="AddArticleViewController" customModule="EsportAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5RN-Bz-tzo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cím" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-id-Aow">
+                                <rect key="frame" x="15" y="94" width="47" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6IH-Se-ixQ">
+                                <rect key="frame" x="15" y="139" width="345" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Szöveg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efA-UW-Ptj">
+                                <rect key="frame" x="15" y="209" width="86.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gi1-6T-z54">
+                                <rect key="frame" x="15" y="254" width="345" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7LC-Bd-vkV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cj-qX-VHF">
+                                <rect key="frame" x="142" y="514" width="91" height="22"/>
+                                <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                <state key="normal" title="Küldés">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="postArticle:" destination="O2A-QH-bZV" eventType="touchUpInside" id="SAt-3N-Wyt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="efA-UW-Ptj" firstAttribute="top" secondItem="6IH-Se-ixQ" secondAttribute="bottom" constant="40" id="8J3-NM-v7S"/>
+                            <constraint firstItem="kLG-id-Aow" firstAttribute="top" secondItem="IsN-4X-eED" secondAttribute="top" constant="30" id="A3E-Ya-FDr"/>
+                            <constraint firstItem="efA-UW-Ptj" firstAttribute="leading" secondItem="kLG-id-Aow" secondAttribute="leading" id="Bel-BL-HAD"/>
+                            <constraint firstItem="gi1-6T-z54" firstAttribute="centerX" secondItem="IsN-4X-eED" secondAttribute="centerX" id="Bgp-Ee-RhB"/>
+                            <constraint firstItem="gi1-6T-z54" firstAttribute="leading" secondItem="efA-UW-Ptj" secondAttribute="leading" id="DMo-tc-Q3M"/>
+                            <constraint firstItem="gi1-6T-z54" firstAttribute="top" secondItem="efA-UW-Ptj" secondAttribute="bottom" constant="15" id="GgG-Kf-Tz5"/>
+                            <constraint firstItem="6IH-Se-ixQ" firstAttribute="top" secondItem="kLG-id-Aow" secondAttribute="bottom" constant="15" id="QjO-9T-gZf"/>
+                            <constraint firstItem="kLG-id-Aow" firstAttribute="leading" secondItem="IsN-4X-eED" secondAttribute="leading" constant="15" id="aXe-GQ-2UV"/>
+                            <constraint firstItem="6IH-Se-ixQ" firstAttribute="centerX" secondItem="IsN-4X-eED" secondAttribute="centerX" id="dSx-mZ-GYr"/>
+                            <constraint firstItem="6IH-Se-ixQ" firstAttribute="leading" secondItem="kLG-id-Aow" secondAttribute="leading" id="emq-zN-p8o"/>
+                            <constraint firstItem="1cj-qX-VHF" firstAttribute="top" secondItem="gi1-6T-z54" secondAttribute="bottom" constant="60" id="xQk-hc-WB2"/>
+                            <constraint firstItem="1cj-qX-VHF" firstAttribute="centerX" secondItem="IsN-4X-eED" secondAttribute="centerX" id="zoM-d1-sVm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IsN-4X-eED"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="gi1-6T-z54" id="qzK-sJ-eMe"/>
+                        <outlet property="postArticleButton" destination="1cj-qX-VHF" id="uev-cJ-Pj5"/>
+                        <outlet property="titleTextField" destination="6IH-Se-ixQ" id="zhC-dp-Cwq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfk-gL-BLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="-500"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="oL3-aT-W2j">
@@ -198,7 +277,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IF4-uI-V1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2654" y="517"/>
+            <point key="canvasLocation" x="1601" y="269"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="WC1-LQ-CWP">
@@ -220,7 +299,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pG2-Ef-heF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="517"/>
+            <point key="canvasLocation" x="734" y="269"/>
         </scene>
         <!--Profil-->
         <scene sceneID="A3A-4W-ZIB">
@@ -324,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egF-d5-d1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3528.8000000000002" y="516.79160419790105"/>
+            <point key="canvasLocation" x="1601" y="1147"/>
         </scene>
         <!--Csapatok-->
         <scene sceneID="tRs-ko-PsF">
@@ -396,7 +475,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPf-TK-sIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4348" y="517"/>
+            <point key="canvasLocation" x="2441" y="1147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mtv-RL-5er">
@@ -415,7 +494,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38U-NY-jJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177" y="270"/>
+            <point key="canvasLocation" x="-191" y="-501"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="74C-WZ-Giy">
@@ -473,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bew-Ny-Cwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1945" y="270"/>
+            <point key="canvasLocation" x="-1167" y="-501"/>
         </scene>
     </scenes>
     <resources>
@@ -481,7 +560,7 @@
         <image name="menu (1)" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R0S-fT-oXH"/>
+        <segue reference="yO9-sT-Dv3"/>
         <segue reference="Cmt-eA-dS4"/>
     </inferredMetricsTieBreakers>
 </document>

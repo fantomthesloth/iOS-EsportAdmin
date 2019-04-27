@@ -23,11 +23,12 @@ struct Constants {
     
     struct UserDefaultsKeys {
         static let token = "token"
+        static let userId = "userId"
     }
     
     struct Segues {
         static let loginToNews = "LoginToNews"
-        static let newsToWeb = "NewsToWeb"
+        static let newsToAddArticle = "NewsToAddArticle"
         static let segueToTeams = "SegueToTeams"
     }
 }

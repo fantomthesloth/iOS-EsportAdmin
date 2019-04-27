@@ -14,6 +14,7 @@ protocol RestFunctions {
     static func loadUser(delegate: LoadProfileDelegate)
     static func login(username: String, password: String, delegate: LoginDelegate)
     static func getUser(id: String, delegate: GetProfileDelegate)
+    static func postArticle(authorId: String, authorName: String, authorPicUrl: String, title: String, content: String, created: String, delegate: PostArticleDelegate)
 }
 
 class RestClient: RestFunctions {
@@ -34,7 +35,10 @@ class RestClient: RestFunctions {
     //Mark: Rest Functions
     static func login(username: String, password: String, delegate: LoginDelegate) {
         let url = "\(Constants.BaseApiUrl.url)/login"
-        let params = ["password": password, "usernameOrEmail": username]
+        let params = [
+            "password": password,
+            "usernameOrEmail": username
+        ]
         
         shared.post(url: url, with: params, isTokenNeeded: false, success: { response in
             let token = Token(json: response)
@@ -63,6 +67,30 @@ class RestClient: RestFunctions {
             delegate.getProfileDidSuccess(response: user)
         }) { (error) in
             delegate.getProfileDidFail(error: error)
+        }
+    }
+    
+    static func postArticle(authorId: String, authorName: String, authorPicUrl: String, title: String, content: String, created: String, delegate: PostArticleDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/news/add"
+        let params = [
+            "id": nil,
+            "authorId": authorId,
+            "authorName": authorName,
+            "authorPictureUrl": authorPicUrl,
+            "newsType": "GLOBAL",
+            "gameId": nil,
+            "teamId": nil,
+            "created": "2019-04-22T13:57:42.201+0000",
+            "title": title,
+            "content": content,
+            "pictureUrls": []
+            ] as [String : Any?]
+        
+        shared.post(url: url, with: params, isTokenNeeded: true, success: { (response) in
+            let news = News(json: response)
+            delegate.postArticleDidSucces(response: news)
+        }) { (error) in
+            delegate.postArticleDidFail(error: error)
         }
     }
     
@@ -112,7 +140,7 @@ class RestClient: RestFunctions {
                           parameters: data,
                           encoding: JSONEncoding.default,
                           headers: head)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200..<500)
             .responseJSON { response in
                 print("♻️ Request result: \(response.result)")
                 print("♻️ Request response: \(response)")

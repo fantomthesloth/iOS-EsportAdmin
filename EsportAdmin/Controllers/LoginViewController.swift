@@ -37,6 +37,11 @@ class LoginViewController: UIViewController {
         loginButton.alpha = 0.5
         RestClient.login(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "", delegate: self)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 
 }
 

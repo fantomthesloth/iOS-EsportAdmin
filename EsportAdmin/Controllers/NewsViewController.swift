@@ -18,10 +18,11 @@ class NewsViewController: UIViewController {
     
     var articles: [News] = []
     var loadingScreen: LoadingScreen?
+    var myUser: MyUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initialSetup()
         addLoadingScreen()
         getNews()
@@ -45,6 +46,7 @@ class NewsViewController: UIViewController {
     }
     
     func getNews() {
+        articles.removeAll()
         let url = "\(Constants.BaseApiUrl.url)/news/listMyNews"
         
         RestClient.shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
@@ -56,6 +58,14 @@ class NewsViewController: UIViewController {
         }) { (error) in
             NSLog("\(error)")
         }
+        RestClient.loadUser(delegate: self)
+    }
+    
+    @IBAction func showAddArticle(_ sender: Any) {
+        let vc: AddArticleViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddArticleViewController") as! AddArticleViewController
+        vc.parentVC = self
+        vc.myUser = self.myUser
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -87,4 +97,16 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
+}
+
+extension NewsViewController: LoadProfileDelegate {
+    func loadProfileDidSuccess(response: MyUser) {
+        self.myUser = response
+    }
+    
+    func loadProfileDidFail(error: Error?) {
+        NSLog("⚠️ Loading profile failed")
+    }
+    
+    
 }
