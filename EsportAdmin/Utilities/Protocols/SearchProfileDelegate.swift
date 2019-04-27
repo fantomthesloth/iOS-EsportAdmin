@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GetProfileDelegate {
-    func getProfileDidSuccess(response: MyUser)
-    func getProfileDidFail(error: Error?)
+protocol SearchProfileDelegate {
+    func searchProfileDidSuccess(response: MyUser)
+    func searchProfileDidFail(error: Error?)
 }

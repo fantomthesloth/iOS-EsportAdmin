@@ -107,6 +107,4 @@ extension NewsViewController: LoadProfileDelegate {
     func loadProfileDidFail(error: Error?) {
         NSLog("⚠️ Loading profile failed")
     }
-    
-    
 }

@@ -35,10 +35,12 @@
 		A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */; };
 		A68C5A9822747AB2006002C6 /* AddArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */; };
 		A68C5A9A2274A5BF006002C6 /* PostArticleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A992274A5BF006002C6 /* PostArticleDelegate.swift */; };
+		A68C5A9E227501A5006002C6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9D227501A5006002C6 /* Entry.swift */; };
+		A68C5AA022750512006002C6 /* SearchTeamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5A9F22750512006002C6 /* SearchTeamDelegate.swift */; };
 		A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */; };
 		A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17722679D620083C974 /* TeamsViewController.swift */; };
 		A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */; };
-		A6FDA17C2267C0E80083C974 /* GetProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */; };
+		A6FDA17C2267C0E80083C974 /* SearchProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17B2267C0E80083C974 /* SearchProfileDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,10 +75,12 @@
 		A68C5A9522747887006002C6 /* UIImage+ImageWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageWithColor.swift"; sourceTree = "<group>"; };
 		A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArticleViewController.swift; sourceTree = "<group>"; };
 		A68C5A992274A5BF006002C6 /* PostArticleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArticleDelegate.swift; sourceTree = "<group>"; };
+		A68C5A9D227501A5006002C6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		A68C5A9F22750512006002C6 /* SearchTeamDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamDelegate.swift; sourceTree = "<group>"; };
 		A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A6FDA17722679D620083C974 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewCell.swift; sourceTree = "<group>"; };
-		A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileDelegate.swift; sourceTree = "<group>"; };
+		A6FDA17B2267C0E80083C974 /* SearchProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProfileDelegate.swift; sourceTree = "<group>"; };
 		D333E2A59987968C1223EEFD /* Pods_EsportAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EsportAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +118,7 @@
 				A62DB38B225E8EC5004C3E84 /* Roles.swift */,
 				A62DB38F225E8EDC004C3E84 /* Teams.swift */,
 				A62134F0226FC3D400610380 /* News.swift */,
+				A68C5A9D227501A5006002C6 /* Entry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,11 +156,12 @@
 		A62DB377225E7728004C3E84 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A62DB378225E7736004C3E84 /* LoginDelegate.swift */,
 				A62DB37F225E865E004C3E84 /* AlertProtocol.swift */,
+				A62DB378225E7736004C3E84 /* LoginDelegate.swift */,
 				A62DB383225E8C6F004C3E84 /* LoadProfileDelegate.swift */,
-				A6FDA17B2267C0E80083C974 /* GetProfileDelegate.swift */,
+				A6FDA17B2267C0E80083C974 /* SearchProfileDelegate.swift */,
 				A68C5A992274A5BF006002C6 /* PostArticleDelegate.swift */,
+				A68C5A9F22750512006002C6 /* SearchTeamDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				A62DB384225E8C6F004C3E84 /* LoadProfileDelegate.swift in Sources */,
 				A62DB386225E8CE6004C3E84 /* MyUser.swift in Sources */,
 				A62DB37E225E7C5C004C3E84 /* UserDefaults+isKeyPresent.swift in Sources */,
+				A68C5AA022750512006002C6 /* SearchTeamDelegate.swift in Sources */,
 				A62DB37B225E77AB004C3E84 /* Token.swift in Sources */,
 				A63E70F921C3B8CD00BA797C /* NewsViewCell.swift in Sources */,
 				A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */,
@@ -380,11 +387,12 @@
 				A63E70FF21C3FA3D00BA797C /* LoginViewController.swift in Sources */,
 				A62DB390225E8EDC004C3E84 /* Teams.swift in Sources */,
 				A62DB382225E867C004C3E84 /* UIViewController+Alert.swift in Sources */,
-				A6FDA17C2267C0E80083C974 /* GetProfileDelegate.swift in Sources */,
+				A6FDA17C2267C0E80083C974 /* SearchProfileDelegate.swift in Sources */,
 				A63E70E321C3B1D500BA797C /* AppDelegate.swift in Sources */,
 				A62DB380225E865E004C3E84 /* AlertProtocol.swift in Sources */,
 				A62DB379225E7736004C3E84 /* LoginDelegate.swift in Sources */,
 				A62DB38A225E8EB8004C3E84 /* Games.swift in Sources */,
+				A68C5A9E227501A5006002C6 /* Entry.swift in Sources */,
 				A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */,
 				A62134F1226FC3D400610380 /* News.swift in Sources */,
 				A68C5A9622747887006002C6 /* UIImage+ImageWithColor.swift in Sources */,

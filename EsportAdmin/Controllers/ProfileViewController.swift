@@ -74,7 +74,7 @@ class ProfileViewController: UIViewController {
     func getTeamMembers() {
         for team in (myUser?.teams)! {
             for member in team.membersId! {
-                RestClient.getUser(id: member, delegate: self)
+                RestClient.searchPlayer(id: member, delegate: self)
             }
         }
     }
@@ -99,12 +99,12 @@ extension ProfileViewController: LoadProfileDelegate {
     }
 }
 
-extension ProfileViewController: GetProfileDelegate {
-    func getProfileDidSuccess(response: MyUser) {
+extension ProfileViewController: SearchProfileDelegate {
+    func searchProfileDidSuccess(response: MyUser) {
         teamMembers?.append(response)
     }
     
-    func getProfileDidFail(error: Error?) {
+    func searchProfileDidFail(error: Error?) {
         NSLog("⚠️ Getting profile failed")
     }
     

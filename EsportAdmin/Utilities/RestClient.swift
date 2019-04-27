@@ -13,7 +13,7 @@ import SwiftyJSON
 protocol RestFunctions {
     static func loadUser(delegate: LoadProfileDelegate)
     static func login(username: String, password: String, delegate: LoginDelegate)
-    static func getUser(id: String, delegate: GetProfileDelegate)
+    static func searchPlayer(id: String, delegate: SearchProfileDelegate)
     static func postArticle(authorId: String, authorName: String, authorPicUrl: String, title: String, content: String, created: String, delegate: PostArticleDelegate)
 }
 
@@ -48,28 +48,6 @@ class RestClient: RestFunctions {
         })
     }
     
-    static func loadUser(delegate: LoadProfileDelegate) {
-        let url = "\(Constants.BaseApiUrl.url)/players/me"
-        
-        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
-            let myUser = MyUser(json: response)
-            delegate.loadProfileDidSuccess(response: myUser)
-        }) { (error) in
-            delegate.loadProfileDidFail(error: error)
-        }
-    }
-    
-    static func getUser(id: String, delegate: GetProfileDelegate) {
-        let url = "\(Constants.BaseApiUrl.url)/players/\(id)"
-        
-        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
-            let user = MyUser(json: response)
-            delegate.getProfileDidSuccess(response: user)
-        }) { (error) in
-            delegate.getProfileDidFail(error: error)
-        }
-    }
-    
     static func postArticle(authorId: String, authorName: String, authorPicUrl: String, title: String, content: String, created: String, delegate: PostArticleDelegate) {
         let url = "\(Constants.BaseApiUrl.url)/news/add"
         let params = [
@@ -91,6 +69,50 @@ class RestClient: RestFunctions {
             delegate.postArticleDidSucces(response: news)
         }) { (error) in
             delegate.postArticleDidFail(error: error)
+        }
+    }
+    
+    static func loadUser(delegate: LoadProfileDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/players/me"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            let myUser = MyUser(json: response)
+            delegate.loadProfileDidSuccess(response: myUser)
+        }) { (error) in
+            delegate.loadProfileDidFail(error: error)
+        }
+    }
+    
+    static func searchPlayer(id: String, delegate: SearchProfileDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/players/\(id)"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            let user = MyUser(json: response)
+            delegate.searchProfileDidSuccess(response: user)
+        }) { (error) in
+            delegate.searchProfileDidFail(error: error)
+        }
+    }
+    
+    static func searchTeam(teamName: String, delegate: SearchTeamDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/search/\(teamName)"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            let team = Teams(json: response)
+            delegate.searchTeamDidSucces(response: team)
+        }) { (error) in
+            delegate.searchTeamDidFail(error: error)
+        }
+    }
+    
+    static func searchPlayerByUsername(username: String, delegate: SearchProfileDelegate) {
+        let url = "\(Constants.BaseApiUrl.url)/search/\(username)"
+        
+        shared.get(url: url, with: nil, isTokenNeeded: true, success: { (response) in
+            let user = MyUser(json: response)
+            delegate.searchProfileDidSuccess(response: user)
+        }) { (error) in
+            delegate.searchProfileDidFail(error: error)
         }
     }
     
