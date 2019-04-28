@@ -11,7 +11,5 @@ target 'EsportAdmin' do
   pod 'SDWebImage', '~> 4.0'
   pod 'SideMenu'
   pod 'SnapKit', '~> 4.0'
-  pod 'SGImageCache'
-
 
 end

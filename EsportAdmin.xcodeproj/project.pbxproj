@@ -40,6 +40,7 @@
 		A68C5AA222750D12006002C6 /* GetEntriesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5AA122750D12006002C6 /* GetEntriesDelegate.swift */; };
 		A68C5AA622751081006002C6 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5AA522751081006002C6 /* EntryViewController.swift */; };
 		A68C5AA822751697006002C6 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5AA722751697006002C6 /* EntryViewCell.swift */; };
+		A6A4917C2275284B001506A1 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4917B2275284B001506A1 /* SideMenuViewController.swift */; };
 		A6EB26B121DBE5C200E470EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */; };
 		A6FDA17822679D620083C974 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA17722679D620083C974 /* TeamsViewController.swift */; };
 		A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */; };
@@ -83,6 +84,7 @@
 		A68C5AA122750D12006002C6 /* GetEntriesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntriesDelegate.swift; sourceTree = "<group>"; };
 		A68C5AA522751081006002C6 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = "/Users/deik/iOS-EsportAdmin/EsportAdmin/Controllers/EntryViewController.swift"; sourceTree = "<absolute>"; };
 		A68C5AA722751697006002C6 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
+		A6A4917B2275284B001506A1 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A6EB26B021DBE5C200E470EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A6FDA17722679D620083C974 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		A6FDA1792267A49C0083C974 /* TeamsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A6FDA17722679D620083C974 /* TeamsViewController.swift */,
 				A68C5AA522751081006002C6 /* EntryViewController.swift */,
 				A68C5A9722747AB2006002C6 /* AddArticleViewController.swift */,
+				A6A4917B2275284B001506A1 /* SideMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				A62DB386225E8CE6004C3E84 /* MyUser.swift in Sources */,
 				A62DB37E225E7C5C004C3E84 /* UserDefaults+isKeyPresent.swift in Sources */,
 				A68C5AA022750512006002C6 /* SearchTeamDelegate.swift in Sources */,
+				A6A4917C2275284B001506A1 /* SideMenuViewController.swift in Sources */,
 				A62DB37B225E77AB004C3E84 /* Token.swift in Sources */,
 				A63E70F921C3B8CD00BA797C /* NewsViewCell.swift in Sources */,
 				A6FDA17A2267A49C0083C974 /* TeamsViewCell.swift in Sources */,
