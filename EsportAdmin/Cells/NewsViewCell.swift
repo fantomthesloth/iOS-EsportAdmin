@@ -32,6 +32,6 @@ class NewsViewCell: UITableViewCell {
         articleAuthorImage.sd_setImage(with: authorUrl)
         articleTitle.text = title
         articleDescription.text = content
-        articleImage.sd_setImage(with: imageUrl)
+        articleImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "newspaper.png"))
     }
 }

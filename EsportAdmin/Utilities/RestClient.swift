@@ -177,7 +177,7 @@ class RestClient: RestFunctions {
                           parameters: data,
                           encoding: JSONEncoding.default,
                           headers: head)
-            .validate(statusCode: 200..<500)
+            .validate(statusCode: 200..<300)
             .responseJSON { response in
                 print("♻️ Request result: \(response.result)")
                 print("♻️ Request response: \(response)")

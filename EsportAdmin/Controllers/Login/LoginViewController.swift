@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
             make.top.equalTo(200)
             make.width.equalTo(300)
         }
-
         passwordTextField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(usernameTextField.snp.bottom).offset(30)

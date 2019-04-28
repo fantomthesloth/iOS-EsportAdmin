@@ -32,7 +32,7 @@ class NewsViewController: UIViewController {
 //        tableView.isUserInteractionEnabled = false
         addNewArticleButton.titleLabel?.baselineAdjustment = .alignCenters
         addNewArticleButton.layer.cornerRadius = addNewArticleButton.frame.height/2.0
-        addNewArticleButton.setImage(UIImage(named: "add (1).png")?.imageWithColor(color1: .white), for: .normal)
+        addNewArticleButton.setImage(UIImage(named: "add.png")?.imageWithColor(color1: .white), for: .normal)
     }
     
     func addLoadingScreen() {

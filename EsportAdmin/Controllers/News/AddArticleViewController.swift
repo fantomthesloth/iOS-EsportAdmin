@@ -58,9 +58,11 @@ class AddArticleViewController: UIViewController {
 extension AddArticleViewController: PostArticleDelegate {
     func postArticleDidSucces(response: News) {
         parentVC?.getNews()
+        self.showAlert(title: "Siker", message: "A hír feltöltése sikeresen megtörtént", actionTitle: "Ok", actionStyle: .default)
     }
     
     func postArticleDidFail(error: Error?) {
+        self.showAlert(title: "Hiba", message: "Valami hiba történt a hír feltöltése közben, kérlek próbáld újra később", actionTitle: "Ok", actionStyle: .default)
     }
     
 
