@@ -19,6 +19,7 @@ struct Constants {
     struct Cells {
         static let newsCell = "NewsCell"
         static let teamsCell = "TeamsCell"
+        static let entryCell = "EntryViewCell"
     }
     
     struct UserDefaultsKeys {
